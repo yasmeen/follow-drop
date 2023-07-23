@@ -1,0 +1,45 @@
+{
+  "name": "sismo-connect-sdk",
+  "version": "1.0.8",
+  "description": "Sismo Connect packages",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "yarn && yarn build:sismo-connect-client && yarn build:sismo-connect-server && yarn build:sismo-connect-react",
+    "build:sismo-connect-client": "cd packages/sismo-connect-client && yarn && yarn build",
+    "build:sismo-connect-server": "cd packages/sismo-connect-server && yarn && yarn build",
+    "build:sismo-connect-react": "cd packages/sismo-connect-react && yarn && yarn build",
+    "prepare": "husky install",
+    "eslint": "eslint --max-warnings=0",
+    "prettier": "prettier --write 'packages/**/src/**/*.ts'"
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.8.4",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "engines": {
+    "npm": "USE YARN INSTEAD OF NPM"
+  },
+  "repository": "git@github.com:sismo-core/sismo-connect-packages.git",
+  "author": "gabin@sismo.io",
+  "license": "MIT",
+  "dependencies": {},
+  "lint-staged": {
+    "src/**/*": "prettier --write 'packages/**/src/**/*.ts'",
+    "src/**/*.{ts,tsx,js,jsx}": [
+      "eslint --max-warnings=0"
+    ]
+  }
+}
